@@ -49,6 +49,7 @@ void counterSort(int* arr, int size, int digit) {
     for (int i = 0; i < size; i++) {
         arr[i] = res[i];
     }
+    delete[] res;
 }
 
 //поразрядная сортировка
@@ -74,9 +75,10 @@ int main() {
     auto start = high_resolution_clock::now();
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
+    int *arr;
 
     for (int n = 10; n <= 10000000; n = n * 10) {
-        int *arr = new int[n];
+        arr = new int[n];
 
         for (int i = 0; i < 10; ++i) {
             randomArray(arr, n);
@@ -91,6 +93,8 @@ int main() {
         }
         cout << endl;
     }
+
+    delete[] arr;
 
     return 0;
 }
