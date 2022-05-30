@@ -5,13 +5,6 @@
 using namespace std;
 using namespace std::chrono;
 
-//Swap
-void swap(int *a, int *b) {
-    int t = *a;
-    *a = *b;
-    *b = t;
-}
-
 //сортировка вставками
 void insertionSort(int* arr, int n) {
     unsigned long long counter = 0;
@@ -84,8 +77,8 @@ int main() {
             randomArray(arr, n);
 
             start = high_resolution_clock::now();
-//            insertionSort(arr, n);
-            radixSort(arr, n);
+            insertionSort(arr, n);
+//            radixSort(arr, n);
             stop = high_resolution_clock::now();
             duration = duration_cast<microseconds>(stop - start);
 
@@ -98,4 +91,3 @@ int main() {
 
     return 0;
 }
-
